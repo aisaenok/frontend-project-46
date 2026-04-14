@@ -12,3 +12,6 @@
 
 ### Gendiff YAML
 ![Gendiff YAML demo](./assets/gifs/gendiff-yaml-demo.gif)
+
+### Gendiff Stylish
+![Gendiff Stylish demo](./assets/gifs/gendiff-stylish-demo.gif)
