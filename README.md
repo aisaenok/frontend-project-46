@@ -15,3 +15,6 @@
 
 ### Gendiff Stylish
 ![Gendiff Stylish demo](./assets/gifs/gendiff-stylish-demo.gif)
+
+### Gendiff Plain
+![Gendiff Plain demo](./assets/gifs/gendiff-plain-demo.gif)
