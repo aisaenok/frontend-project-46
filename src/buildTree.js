@@ -1,7 +1,8 @@
 import { isPlainObject } from './utils.js'
 
 const getSortedKeys = (obj1, obj2) => (
-  [...new Set([...Object.keys(obj1), ...Object.keys(obj2)])].sort()
+  [...new Set([...Object.keys(obj1), ...Object.keys(obj2)])]
+    .sort((a, b) => a.localeCompare(b))
 )
 
 const buildTree = (obj1, obj2) => {
