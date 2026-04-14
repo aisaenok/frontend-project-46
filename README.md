@@ -18,3 +18,6 @@
 
 ### Gendiff Plain
 ![Gendiff Plain demo](./assets/gifs/gendiff-plain-demo.gif)
+
+### Gendiff JSON
+![Gendiff JSON demo](./assets/gifs/gendiff-json-demo.gif)

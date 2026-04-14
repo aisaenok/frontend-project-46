@@ -13,6 +13,7 @@ const readFixture = filename => fs.readFileSync(getFixturePath(filename), 'utf-8
 
 const expectedStylish = readFixture('expectedStylish.txt')
 const expectedPlain = readFixture('expectedPlain.txt')
+const expectedJson = JSON.parse(readFixture('expectedJson.txt'))
 
 test.each([
   ['file1.json', 'file2.json', 'stylish', expectedStylish],
@@ -24,4 +25,14 @@ test.each([
   const filepath2 = getFixturePath(file2)
 
   expect(genDiff(filepath1, filepath2, formatName)).toEqual(expected)
+})
+
+test.each([
+  ['file1.json', 'file2.json'],
+  ['file1.yml', 'file2.yml'],
+])('gendiff compares %s and %s in json format', (file1, file2) => {
+  const filepath1 = getFixturePath(file1)
+  const filepath2 = getFixturePath(file2)
+
+  expect(JSON.parse(genDiff(filepath1, filepath2, 'json'))).toEqual(expectedJson)
 })
