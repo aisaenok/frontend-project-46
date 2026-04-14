@@ -9,3 +9,6 @@
 
 ### Gendiff
 ![Gendiff demo](./assets/gifs/gendiff-demo.gif)
+
+### Gendiff YAML
+![Gendiff YAML demo](./assets/gifs/gendiff-yaml-demo.gif)

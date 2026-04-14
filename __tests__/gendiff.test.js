@@ -9,11 +9,7 @@ const __dirname = dirname(__filename)
 
 const getFixturePath = filename => path.join(__dirname, '..', '__fixtures__', filename)
 
-test('gendiff compares flat json files', () => {
-  const filepath1 = getFixturePath('file1.json')
-  const filepath2 = getFixturePath('file2.json')
-
-  const expected = `{
+const expected = `{
   - follow: false
     host: hexlet.io
   - proxy: 123.234.53.22
@@ -21,6 +17,13 @@ test('gendiff compares flat json files', () => {
   + timeout: 20
   + verbose: true
 }`
+
+test.each([
+  ['file1.json', 'file2.json'],
+  ['file1.yml', 'file2.yml'],
+])('gendiff compares %s and %s', (file1, file2) => {
+  const filepath1 = getFixturePath(file1)
+  const filepath2 = getFixturePath(file2)
 
   expect(genDiff(filepath1, filepath2)).toEqual(expected)
 })

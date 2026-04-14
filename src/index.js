@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import parse from './parse.js'
+import parsers from './parsers.js'
 
 const getAbsolutePath = filepath => path.resolve(process.cwd(), filepath)
 
@@ -49,8 +49,8 @@ const genDiff = (filepath1, filepath2) => {
   const data1 = readFile(filepath1)
   const data2 = readFile(filepath2)
 
-  const parsedData1 = parse(data1, getFileFormat(filepath1))
-  const parsedData2 = parse(data2, getFileFormat(filepath2))
+  const parsedData1 = parsers(data1, getFileFormat(filepath1))
+  const parsedData2 = parsers(data2, getFileFormat(filepath2))
 
   return buildDiff(parsedData1, parsedData2)
 }
